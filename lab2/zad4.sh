@@ -23,5 +23,13 @@
 # Jeżeli plik `całość` istnieje, to należy nadpisać jego zawartość.
 # Kolejność łączenia plików nie ma znaczenia.
 #
+filename='./ddd/całość'
 
+if [ -f ${filename} ] 
+then
+# podaje wszystkie pliki jakie maja zostac otworzone a nastepnie ich zawartosc przerzucam do pliku docelowego
+    cat ./aaa/jeden ./aaa/dwa ./aaa/trzy ./aaa/cztery > "${filename}";
+else
+    touch "${filename}" && cat ./aaa/jeden ./aaa/dwa ./aaa/trzy ./aaa/cztery > "${filename}";
+fi
 

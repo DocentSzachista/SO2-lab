@@ -25,5 +25,12 @@
 # przypadku nie należy tworzyć go na nowo, ale upewnić się, że podczas
 # kopiowania nie nadpiszemy żadnych istniejących w nim plików!
 #
-
+# poleca karol do debugowania 
+to_create="./ddd/głęboki"
+#* kopiuje tylko pliki kiedy . skopiuje pliki i podfoldery
+src_files= './bbb'
+# -p aby suppresować error o tym ze folder juz istnieje 
+# -n nie nadpisuje plikow istniejacych
+# /* po to by kopiowac tylko pliki
+mkdir -p $to_create && cp -n "$src_files"/*  "${to_create}"; 
 
