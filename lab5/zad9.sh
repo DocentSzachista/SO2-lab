@@ -21,4 +21,5 @@
 # czyli jaka nazwa występuje najczęściej. Jako wynik zwrócić tylko samą nazwę.
 # Źródła znajdują się w katalogu `coreutils-8.32`.
 #
+find ./coreutils-8.32 -type f -printf '%f\n' | sort  | uniq --count
 

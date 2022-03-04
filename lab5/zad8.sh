@@ -21,5 +21,7 @@
 # zawartością jest `#include <stdio.h>` (i nic poza tym w ramach tej linii).
 # Jako wynik proszę zwrócić tylko i wyłącznie liczbę odpowiednich plików.
 # Źródła znajdują się w katalogu `coreutils-8.32`.
-#
-
+# -r rekurencyjnie szukaj
+# -l jezeli zawiera w linii to drukujq
+# -x szukaj paternu ktory matchuje cala linie 
+grep -lrx '#include <stdio.h>' ./coreutils-8.32/   | wc -l  
