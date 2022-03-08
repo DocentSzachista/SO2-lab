@@ -21,5 +21,6 @@
 # czyli jaka nazwa występuje najczęściej. Jako wynik zwrócić tylko samą nazwę.
 # Źródła znajdują się w katalogu `coreutils-8.32`.
 #
-find ./coreutils-8.32 -type f -printf '%f\n' | sort  | uniq --count
+ find ./coreutils-8.32 -type f -printf '%f\n' | sort  | uniq --count |sort -h | tail -n '1' | awk '{ print $2 }'
+ #| cut -f 1 -d '.' 
 

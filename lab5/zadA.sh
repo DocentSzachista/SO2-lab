@@ -26,4 +26,4 @@
 # Format każdego adresu e-mail to {nr-indeksu}@student.pwr.edu.pl.
 # Każdy adres e-mail wyświetlać w osobnej linii, nie wyświetlać nic ponadto.
 #
-
+awk -F ';' 'NR>13 {print $2};' 'dodatkowe/listaSluchaczy_E07-19x.csv'  | cut --complement -c1-4 | grep -v '^$' | awk '{print $0"@student.pwr.edu.pl"}'
