@@ -23,5 +23,6 @@
 # Wyświetlić ścieżki do wskazywanych miejsc, konstruując je jako ścieżki
 # względem katalogu domowego bieżącego użytkownika (zmienna ${HOME}).
 #
+find './ccc' -type l -xtype d,f
 
 

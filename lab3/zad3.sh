@@ -23,5 +23,13 @@
 # oryginalnych plików. Rodzaj dowiązania nie ma znaczenia, ale należy
 # upewnić się, że nie zmienimy żadnych istniejących plików w `ddd`.
 #
-
-
+# 
+target_dir='ddd/'
+exec_dir='aaa/'
+exec_files=$(find "$exec_dir" -executable -type f -printf '%f\n')
+for file in $exec_files
+do
+    if ! test -f "${target_dir}${file}" ; then
+        ln "${exec_dir}${file}" "${target_dir}${file}"; 
+    fi;
+done

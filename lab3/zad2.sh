@@ -22,6 +22,13 @@
 # do pliku `podstawa` z katalogu `aaa`. Rodzaj ścieżki (względna/bezwzględna)
 # nie ma znaczenia, ale dowiązanie musi być poprawne. Nie tworzyć dowiązania,
 # jeśli jakikolwiek plik o nazwie `drugi` już istnieje w `ddd`.
-#
-
+# opcja -h w operacjach sciezkach plikach bla bla:
+# -h zwraca True, jezeli plik istnieje i jest wiazaniem symbolicznym (miekkim)
+# link do stacka: https://stackoverflow.com/questions/5767062/how-to-check-if-a-symlink-exists
+dir='ddd/drugi'
+if [ ! -h "$dir" ]; then
+    ln -s 'aaa/podstawa' $dir 
+else 
+    echo "symlink exists";
+fi
 

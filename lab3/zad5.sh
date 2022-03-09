@@ -23,5 +23,10 @@
 # Wyświetlić ścieżki wskazywane przez te dowiązania, każdą w osobnej linii.
 # Nie wyświetlać nic ponadto!
 #
-
-
+# links=$(find 'ccc/' -type l -ls)
+# for link in $links;
+# do
+#     readlink -m $link
+# done
+# inne podejscie 
+find -L 'ccc/' -xtype l -exec ls -al {} \;

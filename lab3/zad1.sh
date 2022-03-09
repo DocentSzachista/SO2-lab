@@ -22,5 +22,7 @@
 # do pliku `podstawa` z katalogu `aaa`. Nie tworzyć dowiązania,
 # jeśli jakikolwiek plik o nazwie `pierwszy` już istnieje w `ddd`.
 #
-ln 'ddd/pierwszy' 'aaa/podstawa' 
-
+dir='ddd/pierwszy'
+if ! test -f "$dir"; then
+    ln 'aaa/podstawa' $dir 
+fi

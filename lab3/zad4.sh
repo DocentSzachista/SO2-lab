@@ -23,5 +23,13 @@
 # Zadbać o to, żeby wielokrotne uruchomienie skryptu nie tworzyło żadnych
 # dodatkowych plików/dowiązań wewnętrznych.
 #
-
-
+target_dir='./ddd'
+if [ ! -h "${target_dir}/aaa" ]; then
+ln -s "/aaa" "./ddd/aaa"
+fi
+if [ ! -h "${target_dir}/bbb" ]; then
+ln -s "/bbb" "./ddd/bbb"
+fi
+if [ ! -h "${target_dir}/ccc" ]; then
+ln -s "/ccc" "./ddd/ccc"
+fi
