@@ -26,4 +26,16 @@
 # liczbę znaków w każdej linii jak to możliwe). Jako wynik programu wyświetlić
 # tekst po przekształceniu.
 #
-
+awk '{
+    line="";
+    for(x=1; x<=NF; x++){
+        if(length(line " " $x)<=80){
+            line=line$x" ";
+        }
+        else{
+            print line;
+            line=$x" ";
+        }
+    }
+    print line;
+}' './dodatkowe/lipsum.txt' | sed 's/ *$//g'

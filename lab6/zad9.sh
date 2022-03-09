@@ -26,4 +26,13 @@
 # – proszę zwrócić uwagę, że niektóre słowa zawierają je na końcu i odpowiednio
 # uwzględnić taką sytuację.
 #
-
+cat 'dodatkowe/nowomowa.txt' | sed -e 's/[\,\.]//g' | awk '{
+    for(i=1; i<=NF; i++){
+        a[length($i)]++;
+    }    
+}
+END{
+    for(i in a){
+        print i" "a[i];
+    }
+}' ;

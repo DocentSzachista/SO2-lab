@@ -24,4 +24,5 @@
 # mechanizmu łącz nienazwanych i przy pomocy programu awk, obliczyć całkowity
 # rozmiar w Bajtach. Jako wynik zwrócić liczbę w MebiBajtach.
 #
-find  'coreutils-8.32/' -print "%f\n"
+# no to cos takiego xD ale gdzies gubie dwa mega :P
+find ./coreutils-8.32 -type f | awk 'BEGIN{size=0} {while((getline line<$0)){size+=length(line)+1}} END {print size/1024/1024}'

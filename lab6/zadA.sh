@@ -35,4 +35,18 @@
 # Uwaga! Jeden prowadzący ma dodatkową spację na końcu linii określającej go
 # i według przyjętej reguły – traktujemy ten wpis jak osobną osobę!
 #
+#dos2unix < './dodatkowe/doc-tajemnic.txt' | 
+awk 'BEGIN{current_teacher="";}{if($1 == "Prowadzący:"){
+        sub(" ?Prowadzący:", "" );
+        current_teacher=$0;
+    }else if(current_teacher!=""){
+        array[current_teacher]+=length($0);
+    }
+    }
+     END{for(i in array){
+        print array[i]" "i;
+    }
+        
+}' './dodatkowe/doc-tajemnic.txt'  | sed 's/\r$//' 
+
 
